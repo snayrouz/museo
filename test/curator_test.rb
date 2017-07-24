@@ -36,7 +36,16 @@ class CuratorTest < Minitest::Test
 
     curator.add_museum({name: "MoMA"})
 
-    assert_equal [museum], curator.museums
+    assert_equal museum, curator.museums
+  end
+
+  def test_can_add_artists
+    curator = Curator.new
+    artist = Artist.new({name: "Ansel Adams", born: 1902, died: 1984, country: "United States"})
+
+    curator.add_artist({name: "Ansel Adams", born: 1902, died: 1984, country: "United States"})
+
+    assert_equal [artist], curator.artists
   end
 
 end

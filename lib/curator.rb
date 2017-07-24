@@ -11,4 +11,8 @@ class Curator
     @museums << museum
   end
 
+  def add_artist(artist)
+    @artists << artist
+  end
+
 end
