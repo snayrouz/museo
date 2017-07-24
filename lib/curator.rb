@@ -9,6 +9,6 @@ class Curator
 
   def add_museum(museum)
     @museums << museum
-  endg
+  end
 
 end

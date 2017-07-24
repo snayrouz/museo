@@ -2,6 +2,7 @@ require 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require './lib/curator'
+require './lib/museum'
 
 class CuratorTest < Minitest::Test
 
@@ -31,10 +32,11 @@ class CuratorTest < Minitest::Test
 
   def test_can_add_museum
     curator = Curator.new
-    museum = Museum.new({name: "MoMA"})
+    museum = Museum.new(:id, :name)
 
-    # assert_equal Museum, curator.add_museum({name: "MoMA"})
-    assert_equal [museum], curator.meseums
+    curator.add_museum({name: "MoMA"})
+
+    assert_equal [museum], curator.museums
   end
 
 end
